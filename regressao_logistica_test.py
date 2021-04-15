@@ -92,15 +92,17 @@ class TestRegressaoLogistica(unittest.TestCase):
 
     def test_fit(self):
         self.metodo.fit(self.mat_x,np.array([0,0,1]),0.1)
-        arr_expected  = [1.2286229930132182,-0.41843816570061465,0.8410999350627626,0.3238109930963504]
-        for i,expected in enumerate(arr_expected):
-            self.assertAlmostEqual(expected, self.metodo.arr_w[i])
-        
-
+        self.assertListEqual([1.2286229930132182,-0.41843816570061465,0.8410999350627626,0.3238109930963504], list(self.metodo.arr_w))
 
     def test_predict(self):
-        self.mat_x[1] = -0.3
-        self.assertListEqual(list(self.metodo.predict(self.mat_x)),[1,0,1])
+        mat_x = np.array([[0.3,-0.3,0.3,0.5],#instancia 1
+                                        [0.1,-4.3,0.1,0.1],#instancia 2
+                                        [0.9,0.1,0.4,0.7], #instancia 3
+                                        [0.9,0.1,0.4,0.7]#instancia 4
+                                        ])
+        predicts = list(self.metodo.predict(mat_x))
+        self.assertEqual(len(predicts),4,"Quantidade de resultados inesperada")
+        self.assertListEqual(predicts,[1,0,1,1])
     def z_test(self,arr_z):
         self.assertEqual(len(arr_z),3,"O vetor retonado por z deveria possuir 3 elementos (um resultado por instancia)")
         for i,z in enumerate(arr_z):
