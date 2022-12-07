@@ -127,7 +127,8 @@ class RegressaoLogistica():
 
             #print("A: "+str(self.arr_a))
             #print("Y:"+str(arr_y))
-            print("Iteração: "+str(i)+" Loss: "+str(loss))
+            if (i%10 == 0):
+                print("Iteração: "+str(i)+" Loss: "+str(loss))
 
 
 
