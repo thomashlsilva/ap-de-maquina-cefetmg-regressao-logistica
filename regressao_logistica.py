@@ -17,8 +17,10 @@ class FuncaoAtivacao():
         self.dz_funcao = dz_funcao
 
 # Atividade 1: Crie as funções lambda para instanciar um objeto da classe FunçãoAtivacao. Lembre-se que funcao e dz_função são funções que estão sendo passadas como parametro
-funcao = None
-dz_funcao = None
+# dica: a função é a sigmoid e não necessariamente você usará todos os parametros
+# deixamos todos os parametros por completeza para a proxima prática
+funcao = lambda z: None
+dz_funcao = lambda a, z, y: None
 sigmoid = FuncaoAtivacao(funcao,dz_funcao)
 
 class RegressaoLogistica():
