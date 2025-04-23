@@ -61,12 +61,14 @@ pip install -r requirements.txt
 
 Atenção: Evite usar sudo com o pip.
 
-## Executando o Jupyter Notebook
+### Executando o Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 Abra o notebook fornecido e execute as células conforme as instruções no arquivo.
+
+---
 
 ## Créditos
 
